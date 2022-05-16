@@ -25,6 +25,9 @@ const TableBody = (props) => {
         </td>
         <td>
           <button onClick={() => props.removeLink(index)}>Delete</button>
+
+          <tr><button onClick={() => this.props.removeLink(index)}></button></tr>
+        
         </td>
       </tr>
     )
@@ -34,9 +37,17 @@ const TableBody = (props) => {
 }
 
 const Table = (props) => {
-  {
-    /*TODO - return <table> component, TableHeader and TableBody  and pass props!*/
-  }
+   
+      /*TODO - return <table> component, TableHeader and TableBody  and pass props!*/
+      return(
+      <table>
+          {<TableHeader />}
+          {<TableBody linkData={props.linkData} removeLink={props.handleRemove} />}
+      </table>
+   )    
+    
 }
 
 export default Table
+
+//<TableBody linkData={props.linkData} removeLink={props.handleRemove} />
